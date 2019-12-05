@@ -1,12 +1,20 @@
 package vn.edu.usth.weather;
 
-import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
-import android.util.Log;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentPagerAdapter;
+import androidx.viewpager.widget.PagerAdapter;
 import androidx.viewpager.widget.ViewPager;
+import android.content.Context;
 import android.os.Bundle;
+import android.util.AttributeSet;
+import android.util.Log;
+import android.view.View;
+import android.widget.ImageView;
+import android.widget.TableLayout;
+import android.widget.TextView;
 import com.google.android.material.tabs.TabLayout;
-import android.os.PersistableBundle;
 
 public class WeatherActivity extends AppCompatActivity {
 
@@ -21,6 +29,9 @@ public class WeatherActivity extends AppCompatActivity {
         ViewPager viewPager= findViewById(R.id.view_pager);
         viewPager.setOffscreenPageLimit(3);
         viewPager.setAdapter(adapter);
+
+        TabLayout tabLayout = (TabLayout) findViewById(R.id.tab_layout);
+        tabLayout.setupWithViewPager(viewPager);
 
 
 
