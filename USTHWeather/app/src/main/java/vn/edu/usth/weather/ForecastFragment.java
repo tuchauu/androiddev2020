@@ -14,25 +14,14 @@ import android.view.ViewGroup;
 import android.widget.LinearLayout;
 
 
-/**
- * A simple {@link Fragment} subclass.
- * Activities that contain this fragment must implement the
- * {@link ForecastFragment.OnFragmentInteractionListener} interface
- * to handle interaction events.
- * Use the {@link ForecastFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
+
 public class ForecastFragment extends Fragment {
     @Nullable
     @Override
-    public View onCreateView(@NonNull LayoutInflater inflater,@NonNull ViewGroup container,
-                             @NonNull Bundle savedInstanceState) {
-    View view = inflater.inflate(R.layout.fragment_forecast,container,false);
-        LinearLayout vertical_layout= view.findViewById(R.id.vertical_layout);
+    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        super.onCreateView(inflater, container, savedInstanceState);
+        View v = inflater.inflate(R.layout.fragment_forecast, container,false);
+        return v;
 
-
-    View v=new View(getContext());
-    v.setBackgroundColor(0x2000FF00);
-    return v;
     }
 }
